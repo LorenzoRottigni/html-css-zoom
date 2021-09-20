@@ -1,0 +1,118 @@
+@keyframes rotation {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    50%{
+        trasnform: rotate(-30deg);
+    }
+    75%{
+        transform: rotate(-30deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    font-size: 24px;
+    font-weight: normal;
+}
+header{
+    background-color: lightgray;
+    text-align: center;
+    flex-shrink: 0;
+}
+header *{
+    line-height: 3vh;
+}
+header span{
+    display: inline-block;
+    width: 200px;
+    height: 26px;
+    border: solid white 5px;
+    background-color: grey;
+    margin-left: 5px;
+    vertical-align: sub;
+}
+main{
+    background-color: black;
+    padding: 4vh 0;
+    position: relative;
+}
+div.user-window-container{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid black;
+    margin-left: auto;
+    margin-right: auto; 
+}
+div.user-window{
+    width: calc(100%/5);
+    height: calc(82vh/5);
+    border: solid black;
+    background-color: white;    
+    text-align: center;
+    background-image: url('../images/user-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+div.user-window img{
+    height:  calc(82vh/5);
+    animation: rotation infinite 2s linear; 
+}
+div[class^="go-"]{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%;
+    color: white;
+    font-weight: bold;
+    z-index: 99;
+}
+div[class^="go-"] i{
+    font-size: 100px;
+    width: 100%;
+    transition: 1s;
+}
+div.go-left{
+    left: 0;
+    text-align: right;
+}
+div.go-right{
+    right: 0;
+    text-align: left;
+}
+div[class^="go-"] i:hover{
+    color: cyan;
+}
+div.top-right-button-container{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+button{
+    padding: 5px;
+    background-color: #3b3b3b;
+    color: white;
+    border-radius: 5px;
+    border: solid transparent;
+    z-index: 99;
+}
+button:hover{
+    background-color: lightgray;
+    color: black
+}
+footer{
+    width: 100%;
+    height: 7vh;
+    background-color: grey;
+}
