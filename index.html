@@ -6,44 +6,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Document</title>
+    <title>Zoom</title>
 </head>
 <body>
     <header>
         <h1>Zoom Meeting ID:<span></span></h1>
     </header>
     <main>
+        <!-- i pulsanti del main sono posizionati tutti in absolute -->
         <div class="go-left"><i class="fas fa-caret-left"></i>1/2</div>
         <div class="go-right"><i class="fas fa-caret-right"></i>1/2</div>
         <div class="top-right-button-container">
             <button><i class="fas fa-film"></i> Speaker View</button>
             <button><i class="fas fa-expand-arrows-alt"></i></button>
         </div>
-            <div class="user-window yellow-background-1"><img src="images/smile-1.png" alt="user2"></div>
-            <div class="user-window yellow-background-2"><img src="images/smile-2.png" alt="user2"></div>
-            <div class="user-window yellow-background-3"><img src="images/smile-3.png" alt="user2"></div>
-            <div class="user-window yellow-background-4"><img src="images/smile-4.png" alt="user2"></div>
-            <div class="user-window yellow-background-1"><img src="images/smile-5.png" alt="user2"></div>
-            <div class="user-window yellow-background-5"><img src="images/smile-6.png" alt="user2"></div>
-            <div class="user-window yellow-background-3"><img src="images/smile-7.png" alt="user2"></div>
-            <div class="user-window yellow-background-2"><img src="images/smile-8.png" alt="user2"></div>
-            <div class="user-window yellow-background-6"><img src="images/smile-9.png" alt="user2"></div>
-            <div class="user-window yellow-background-1"><img src="images/smile-6.png" alt="user2"></div>
-            <div class="user-window yellow-background-6"><img src="images/smile-8.png" alt="user2"></div>
-            <div class="user-window yellow-background-5"><img src="images/smile-8.png" alt="user2"></div>
-            <div class="user-window yellow-background-7"><img src="images/smile-4.png" alt="user2"></div>
-            <div class="user-window yellow-background-7"><img src="images/smile-5.png" alt="user2"></div>
-            <div class="user-window yellow-background-2"><img src="images/smile-6.png" alt="user2"></div>
-            <div class="user-window yellow-background-4"><img src="images/smile-1.png" alt="user2"></div>
-            <div class="user-window yellow-background-1"><img src="images/smile-3.png" alt="user2"></div>
-            <div class="user-window yellow-background-6"><img src="images/smile-2.png" alt="user2"></div>
-            <div class="user-window yellow-background-3"><img src="images/smile-4.png" alt="user2"></div>
-            <div class="user-window yellow-background-5"><img src="images/smile-9.png" alt="user2"></div>
-            <div class="user-window yellow-background-2"><img src="images/smile-8.png" alt="user2"></div>
-            <div class="user-window yellow-background-3"><img src="images/smile-5.png" alt="user2"></div>
-            <div class="user-window yellow-background-1"><img src="images/smile-6.png" alt="user2"></div>
-            <div class="user-window yellow-background-4"><img src="images/smile-1.png" alt="user2"></div>
-            <div class="user-window yellow-background-1"><img src="images/smile-4.png" alt="user2"></div>
+        <!-- cambiando da % in px i container degli utenti si adattano alle dimensioni dello schermo-->
+        <div class="user-window yellow-background-1">
+            <img src="images/smile-1.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-1</span>
+        </div>
+        <div class="user-window yellow-background-2 speaker-1">
+            <img src="images/smile-2.png" alt="user-image">
+            <span class="img-overlay"> smile-2</span>
+        </div>
+        <div class="user-window yellow-background-3">
+            <img src="images/smile-3.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-3</span>
+        </div>
+        <div class="user-window yellow-background-4">
+            <img src="images/smile-4.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-4</span>
+        </div>
+        <div class="user-window yellow-background-1">
+            <img src="images/smile-5.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-5</span>
+        </div>
+        <div class="user-window yellow-background-5">
+            <img src="images/smile-6.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-6</span>
+        </div>
+        <div class="user-window yellow-background-3">
+            <img src="images/smile-7.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-7</span>
+        </div>
+        <div class="user-window yellow-background-2">
+            <img src="images/smile-8.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-8</span>
+        </div>
+        <div class="user-window yellow-background-6">
+            <img src="images/smile-9.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-9</span>
+        </div>
+        <div class="user-window yellow-background-1">
+            <img src="images/smile-6.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-10</span>
+        </div>
+        <div class="user-window yellow-background-6">
+            <img src="images/smile-8.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-11</span>
+        </div>
+        <div class="user-window yellow-background-5">
+            <img src="images/smile-8.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-12</span>
+        </div>
+        <div class="user-window yellow-background-7 speaker-2">
+            <img src="images/smile-4.png" alt="user-image">
+            <span class="img-overlay"> smile-13</span>
+        </div>
+        <div class="user-window yellow-background-7">
+            <img src="images/smile-5.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-14</span>
+        </div>
+        <div class="user-window yellow-background-2">
+            <img src="images/smile-6.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-15</span>
+        </div>
+        <div class="user-window yellow-background-4">
+            <img src="images/smile-1.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-16</span>
+        </div>
+        <div class="user-window yellow-background-1">
+            <img src="images/smile-3.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-17</span>
+        </div>
+        <div class="user-window yellow-background-6">
+            <img src="images/smile-2.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-18</span>
+        </div>
+        <div class="user-window yellow-background-3">
+            <img src="images/smile-4.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-19</span>
+        </div>
+        <div class="user-window yellow-background-5">
+            <img src="images/smile-9.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-20</span>
+        </div>
+        <div class="user-window yellow-background-2">
+            <img src="images/smile-8.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-21</span>
+        </div>
+        <div class="user-window yellow-background-3">
+            <img src="images/smile-5.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-22</span>
+        </div>
+        <div class="user-window yellow-background-1">
+            <img src="images/smile-6.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-23</span>
+        </div>
+        <div class="user-window yellow-background-4 speaker-3">
+            <img src="images/smile-1.png" alt="user-image">
+            <span class="img-overlay"> smile-24</span>
+        </div>
+        <div class="user-window yellow-background-1">
+            <img src="images/smile-4.png" alt="user-image">
+            <span class="img-overlay"><i class="fas fa-microphone-alt-slash"></i> smile-25</span>
+        </div>
     </main>
     <footer>
         <div class="footer-left">

@@ -1,3 +1,6 @@
+/*************************************/
+/* ANIMAZIONE SMILES */
+/*************************************/
 @keyframes rotation {
     0% {
         transform: rotate(0);
@@ -15,6 +18,72 @@
         transform: rotate(0);
     }
 }
+/*************************************/
+/* SIMULAZIONE CONVERSAZIONE */
+/*************************************/
+@keyframes speaker-1 {
+    0%{
+        border: solid #4bc800;
+    }
+    25%{
+        border: solid #4bc800;
+    }
+    50%{
+        border: solid black;
+    }
+    75%{
+        border: solid black;
+    }
+    100%{
+        border: solid black;
+    }
+}
+@keyframes speaker-2 {
+    0%{
+        border: solid black;
+    }
+    25%{
+        border: solid black;
+    }
+    50%{
+        border: solid #4bc800;
+    }
+    75%{
+        border: solid black;
+    }
+    100%{
+        border: solid black;
+    }
+}
+@keyframes speaker-3 {
+    0%{
+        border: solid black;
+    }
+    25%{
+        border: solid black;
+    }
+    50%{
+        border: solid black;
+    }
+    75%{
+        border: solid #4bc800;
+    }
+    100%{
+        border: solid #4bc800;
+    }
+}
+.speaker-1{
+    animation: speaker-1 infinite 10s;
+}
+.speaker-2{
+    animation: speaker-2 infinite 10s;
+}
+.speaker-3{
+    animation: speaker-3 infinite 10s;
+}
+/*************************************/
+/* GLOBAL RESET */
+/*************************************/
 *{
     margin: 0;
     padding: 0;
@@ -26,11 +95,15 @@ body{
       e ho asseggnato le altezze dei figli con il flex-grow*/
     height: 100vh;
     flex-direction: column;
+    font-family: sans-serif;
 }
 h1{
     font-size: 24px;
     font-weight: normal;
 }
+/*************************************/
+/* UTILITY CLASSES */
+/*************************************/
 .yellow-background-1{
     background-image: url('../images/yellow-background-1.jpg');
     background-size: cover;
@@ -73,6 +146,76 @@ h1{
     background-repeat: no-repeat;
     background-position: center;
 }
+.green{
+    color: #4bc800;
+}
+
+/*************************************/
+/* FONT-AWESOME */
+/*************************************/
+
+.fa-user-friends{
+    position: relative;
+}
+.fa-user-friends:after{
+    content:"28";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+}
+.fa-record-vinyl{
+    position: relative;
+}
+.fa-chevron-up{
+    margin-left: -40px;
+}
+
+/*************************************/
+/* BUTTONS */
+/*************************************/
+
+.end-meeting{
+    background-color: #464749;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 10%;
+    color: #e9554a;
+    font-size: 24px;
+    font-weight: bold;
+    border: solid transparent;
+}
+.end-meeting:hover{
+    background-color: lightgray;
+    color: black;
+}
+.top-right-button-container{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+.top-right-button-container button{
+    padding: 5px;
+    background-color: #3b3b3b;
+    color: white;
+    border-radius: 5px;
+    border: solid transparent;
+    z-index: 99;
+}
+.top-right-button-container button:hover{
+    background-color: lightgray;
+    color: black
+}
+
+/*************************************/
+/* SPECIFIC SELECTORS */
+/*************************************/
+
+/*************************************/
+/* HEADER */
+/*************************************/
 header{
     background-color: lightgray;
     text-align: center;
@@ -87,6 +230,11 @@ header span{
     margin-left: 5px;
     vertical-align: sub;
 }
+
+/*************************************/
+/* MAIN */
+/*************************************/
+
 main{
     background-color: black;
     padding: 50px 200px;
@@ -96,25 +244,47 @@ main{
     flex-wrap: wrap;
     justify-content: center;
 }
+/*************************************/
+/* SINGLE USER WINDOW */
+/*************************************/
+main div.user-window{
+    width: calc(100%/5);
+    border: solid black;
+    background-color: white;    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     ASSEGNANDO DIMENSIONI STATICHE ALLA CLASSE USER-WINDOW
     LE COLONNE SI ADATTERANNO E ANDRANNO A CAPO IN BASE
     ALLA DIMENSIONE DELLO SCHERMO
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-div.user-window{
-    width: calc(100%/5);
-    border: solid black;
-    background-color: white;    
-    text-align: center;
-}
+
+/* rotating smiles images */ 
 div.user-window img{
     object-fit: contain;
-    width: 100%;
-    /*ho assegnato una vh pari a 1/7 della viewport in modo da creare 
-      un totale di massimo 5 righe escludendo header e footer*/
-    max-height: calc(100vh/7);
-    animation: rotation infinite 2s linear; 
+    width: 50%;
+    animation: rotation infinite 2s linear;
 }
+/* user-window status bar */
+div.user-window .img-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+}
+div.user-window .img-overlay i{
+    color: red;
+}
+/*************************************/
+/* ABSOLUTE GO-LEFT & GO RIGHT BUTTONS */
+/*************************************/
 div[class^="go-"]{
     position: absolute;
     top: 50%;
@@ -129,6 +299,9 @@ div[class^="go-"] i{
     width: 100%;
     transition: 1s;
 }
+div[class^="go-"] i:hover{
+    color: #2ebaff;
+}
 div.go-left{
     left: 0;
     text-align: right;
@@ -137,26 +310,11 @@ div.go-right{
     right: 0;
     text-align: left;
 }
-div[class^="go-"] i:hover{
-    color: #2ebaff;
-}
-div.top-right-button-container{
-    position: absolute;
-    top: 15px;
-    right: 20px;
-}
-main button{
-    padding: 5px;
-    background-color: #3b3b3b;
-    color: white;
-    border-radius: 5px;
-    border: solid transparent;
-    z-index: 99;
-}
-main button:hover{
-    background-color: lightgray;
-    color: black
-}
+
+/*************************************/
+/* FOOTER */
+/*************************************/
+
 footer{
     width: 100%;
     background-color: #212324;
@@ -165,6 +323,9 @@ footer{
     align-items: center;
     padding: 10px 30px;
     position: relative;
+    /*per evitare che gli elementi si sovrappongano
+      restringendo la viewport*/
+    flex-wrap: wrap-reverse;
 }
 footer div i{
     display: block;
@@ -190,39 +351,4 @@ footer ul li{
 }
 footer ul li:hover{
     color: #4bc800;
-}
-.end-meeting{
-    background-color: #464749;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    width: 10%;
-    color: #e9554a;
-    font-size: 24px;
-    font-weight: bold;
-    border: solid transparent;
-}
-.end-meeting:hover{
-    background-color: lightgray;
-    color: black;
-}
-.green{
-    color: #4bc800;
-}
-.fa-user-friends{
-    position: relative;
-}
-.fa-user-friends:after{
-    content:"28";
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 20px;
-}
-.fa-record-vinyl{
-    position: relative;
-}
-.fa-chevron-up{
-    margin-left: -40px;
 }
