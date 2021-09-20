@@ -24,6 +24,48 @@ h1{
     font-size: 24px;
     font-weight: normal;
 }
+.yellow-background-1{
+    background-image: url('../images/yellow-background-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.yellow-background-2{
+    background-image: url('../images/yellow-background-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.yellow-background-3{
+    background-image: url('../images/yellow-background-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.yellow-background-4{
+    background-image: url('../images/yellow-background-4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.yellow-background-5{
+    background-image: url('../images/yellow-background-5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.yellow-background-6{
+    background-image: url('../images/yellow-background-6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.yellow-background-7{
+    background-image: url('../images/yellow-background-7.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 header{
     background-color: lightgray;
     text-align: center;
@@ -56,17 +98,13 @@ div.user-window-container{
 }
 div.user-window{
     width: calc(100%/5);
-    height: calc(82vh/5);
     border: solid black;
     background-color: white;    
     text-align: center;
-    background-image: url('../images/user-background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 div.user-window img{
-    height:  calc(82vh/5);
+    max-height:  calc(82vh/5);
+    max-width: 100%;
     animation: rotation infinite 2s linear; 
 }
 div[class^="go-"]{
@@ -113,6 +151,39 @@ button:hover{
 }
 footer{
     width: 100%;
-    height: 7vh;
-    background-color: grey;
+    background-color: #212324;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer div i{
+    display: block;
+    font-size: 36px;
+}
+footer div i.fa-chevron-up{
+    font-size: 24px;
+}
+footer ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #dcdcdc
+}
+footer ul li{
+    display: flex;
+
+    color: #dcdcdc;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px;
+}
+.end-meeting{
+    background-color: #464749;
+    line-height: 7vh;
+    padding: 0 30px;
+    color: #e9554a;
+    font-size: 24px;
+    font-weight: bold;
 }
