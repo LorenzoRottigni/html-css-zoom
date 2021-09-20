@@ -20,6 +20,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    display: flex;
+    /*essendo una webapplication ho assegnato un 100vh al body
+      e ho asseggnato le altezze dei figli con il flex-grow*/
+    height: 100vh;
+    flex-direction: column;
+}
 h1{
     font-size: 24px;
     font-weight: normal;
@@ -69,10 +76,7 @@ h1{
 header{
     background-color: lightgray;
     text-align: center;
-    flex-shrink: 0;
-}
-header *{
-    line-height: 3vh;
+    padding: 10px 0;
 }
 header span{
     display: inline-block;
@@ -85,17 +89,18 @@ header span{
 }
 main{
     background-color: black;
-    padding: 4vh 0;
+    padding: 50px 200px;
     position: relative;
-}
-div.user-window-container{
-    width: 80%;
+    flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
-    border: solid black;
-    margin-left: auto;
-    margin-right: auto; 
+    justify-content: center;
 }
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    ASSEGNANDO DIMENSIONI STATICHE ALLA CLASSE USER-WINDOW
+    LE COLONNE SI ADATTERANNO E ANDRANNO A CAPO IN BASE
+    ALLA DIMENSIONE DELLO SCHERMO
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 div.user-window{
     width: calc(100%/5);
     border: solid black;
@@ -103,8 +108,11 @@ div.user-window{
     text-align: center;
 }
 div.user-window img{
-    max-height:  calc(82vh/5);
-    max-width: 100%;
+    object-fit: contain;
+    width: 100%;
+    /*ho assegnato una vh pari a 1/7 della viewport in modo da creare 
+      un totale di massimo 5 righe escludendo header e footer*/
+    max-height: calc(100vh/7);
     animation: rotation infinite 2s linear; 
 }
 div[class^="go-"]{
@@ -130,14 +138,14 @@ div.go-right{
     text-align: left;
 }
 div[class^="go-"] i:hover{
-    color: cyan;
+    color: #2ebaff;
 }
 div.top-right-button-container{
     position: absolute;
     top: 15px;
     right: 20px;
 }
-button{
+main button{
     padding: 5px;
     background-color: #3b3b3b;
     color: white;
@@ -145,7 +153,7 @@ button{
     border: solid transparent;
     z-index: 99;
 }
-button:hover{
+main button:hover{
     background-color: lightgray;
     color: black
 }
@@ -155,10 +163,12 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 30px;
+    position: relative;
 }
 footer div i{
     display: block;
-    font-size: 36px;
+    font-size: 32px;
 }
 footer div i.fa-chevron-up{
     font-size: 24px;
@@ -172,18 +182,47 @@ footer ul{
 }
 footer ul li{
     display: flex;
-
     color: #dcdcdc;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 0 15px;
+    padding: 0 30px;
+}
+footer ul li:hover{
+    color: #4bc800;
 }
 .end-meeting{
     background-color: #464749;
-    line-height: 7vh;
-    padding: 0 30px;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 10%;
     color: #e9554a;
     font-size: 24px;
     font-weight: bold;
+    border: solid transparent;
+}
+.end-meeting:hover{
+    background-color: lightgray;
+    color: black;
+}
+.green{
+    color: #4bc800;
+}
+.fa-user-friends{
+    position: relative;
+}
+.fa-user-friends:after{
+    content:"28";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+}
+.fa-record-vinyl{
+    position: relative;
+}
+.fa-chevron-up{
+    margin-left: -40px;
 }
